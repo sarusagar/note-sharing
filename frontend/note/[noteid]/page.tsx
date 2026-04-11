@@ -1,6 +1,7 @@
 import { Note } from '@/app/types'
 import Image from 'next/image'
 import React from 'react'
+import PriviewButton from './components/PriviewButton'
 
 const singleNote =async ({params}:{params :{noteId :string}}) => {
     let note:Note | null = null
@@ -62,7 +63,7 @@ const singleNote =async ({params}:{params :{noteId :string}}) => {
             </div>
             <div className="mt-4 flex items-center justify-between">
                 <span className="border-b w-1/5 md:w-1/4"></span>
-                <a  href="#" className="text-xs text-gray-500 uppercase">or sign up</a>
+                <PriviewButton fileLink={note?.file as string}  />
                 <span className="border-b w-1/5 md:w-1/4"></span>
             </div>
         </div>
